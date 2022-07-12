@@ -111,7 +111,7 @@ async function startkagura() {
        try {
        ppgc = await kagura.profilePictureUrl(pea[0].id, 'image')
        } catch {
-       ppgc = 'https://shortlink.kaguraarridho.my.id/rg1oT'
+       ppgc = 'https://ibb.co/Syj69KW'
        }
        let wm_fatih = { url : ppgc }
        if (pea[0].announce == true) {
@@ -226,7 +226,7 @@ async function startkagura() {
 
     kagura.ev.on('connection.update', async (update) => {
         const { connection, lastDisconnect } = update	    
-        if (connection === 'close') {
+        if (connection === 'inclose') {
         let reason = new Boom(lastDisconnect?.error)?.output.statusCode
             if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); kagura.logout(); }
             else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, reconnecting...."); startkagura(); }
