@@ -10,7 +10,7 @@ const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
 const pino = require('pino')
 const { Boom } = require('@hapi/boom')
 const fs = require('fs')
-const yargs = require('yargs/yargs')
+const yargs = require('yargs')
 const chalk = require('chalk')
 const FileType = require('file-type')
 const path = require('path')
@@ -57,8 +57,7 @@ global.loadDatabase = async function loadDatabase() {
     others: {},
     sticker: {},
     ...(global.db.data || {})
-  }
-  global.db.chain = chain(global.db.data)
+}
 }
 loadDatabase()
 
