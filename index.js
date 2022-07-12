@@ -58,7 +58,7 @@ global.loadDatabase = async function loadDatabase() {
     sticker: {},
     ...(global.db.data || {})
   }
-  global.db.chain = _.chain(global.db.data)
+  global.db.chain = chain(global.db.data)
 }
 loadDatabase()
 
