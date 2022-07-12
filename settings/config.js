@@ -8,18 +8,18 @@ zenz: 'https://zenzapis.xyz',
 
 // Apikey Website Api
 global.APIKeys = {
-'https://zenzapis.xyz': 'netrogembel',
+'https://zenzapis.xyz': '192e24e3a9b2',
 }
 
 // Other
-global.owner = ['79524197466']
-global.premium = ['79524197466']
+global.owner = ['996755994412']
+global.premium = ['996755994412']
 global.botname = 'JoKeR'
 global.ownername = 'ZloiAdmin'
 global.packname = 'Стикеры'
 global.author = 'ZloiAdmiN'
 global.sessionName = 'session'
-global.prefa = ['','!','.','🐦','🐤','🗿']
+global.prefa = ['#']
 global.sp = '⭔'
 global.mess = {
 success: '*_Done_*',
