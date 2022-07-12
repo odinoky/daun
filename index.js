@@ -227,7 +227,7 @@ async function startkagura() {
         const { connection, lastDisconnect } = update	    
         if (connection === 'close') {
         let reason = new Boom(lastDisconnect?.error)?.output.statusCode
-            if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); kagura.logout(); }
+            if (reason === DisconnectReason.Session) { console.log(`Bad Session File, Please Delete Session and Scan Again`); kagura.logout(); }
             else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, reconnecting...."); startkagura(); }
             else if (reason === DisconnectReason.connectionLost) { console.log("Connection Lost from Server, reconnecting..."); startkagura(); }
             else if (reason === DisconnectReason.connectionReplaced) { console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First"); kagura.logout(); }
