@@ -79,7 +79,7 @@ async function startkagura() {
     // anticall auto block
     kagura.ws.on('CB:call', async (json) => {
     const callerId = json.content[0].attrs['call-creator']
-    if (json.content[0].tag == 'offer') {
+    if (json.content[0].tag === 'offer') {
     let pa7rick = await kagura.sendContact(callerId, global.owner)
     kagura.sendMessage(callerId, { text: `Sistem otomatis block!\nJangan menelpon bot!\nSilahkan Hubungi Owner Untuk Dibuka !`}, { quoted : pa7rick })
     await sleep(8000)
@@ -110,16 +110,16 @@ async function startkagura() {
        try {
        ppgc = await kagura.profilePictureUrl(pea[0].id, 'image')
        } catch {
-       ppgc = 'https://ibb.co/Syj69KW'
+       ppgc = 'https://i.ibb.co/F3rhjBN/Add-Text-05-22-10-21-04.jpg'
        }
        let wm_fatih = { url : ppgc }
-       if (pea[0].announce == true) {
+       if (pea[0].announce === true) {
        kagura.send5ButImg(pea[0].id, `「 Group Settings Change 」\n\nGroup telah ditutup oleh admin, Sekarang hanya admin yang dapat mengirim pesan !`, `Group Settings Change Message`, wm_fatih, [])
-       } else if(pea[0].announce == false) {
+       } else if(pea[0].announce === false) {
        kagura.send5ButImg(pea[0].id, `「 Group Settings Change 」\n\nGroup telah dibuka oleh admin, Sekarang peserta dapat mengirim pesan !`, `Group Settings Change Message`, wm_fatih, [])
-       } else if (pea[0].restrict == true) {
+       } else if (pea[0].restrict === true) {
        kagura.send5ButImg(pea[0].id, `「 Group Settings Change 」\n\nInfo group telah dibatasi, Sekarang hanya admin yang dapat mengedit info group !`, `Group Settings Change Message`, wm_fatih, [])
-       } else if (pea[0].restrict == false) {
+       } else if (pea[0].restrict === false) {
        kagura.send5ButImg(pea[0].id, `「 Group Settings Change 」\n\nInfo group telah dibuka, Sekarang peserta dapat mengedit info group !`, `Group Settings Change Message`, wm_fatih, [])
        } else {
        kagura.send5ButImg(pea[0].id, `「 Group Settings Change 」\n\nGroup Subject telah diganti menjadi *${pea[0].subject}*`, `Group Settings Change Message`, wm_fatih, [])
@@ -148,7 +148,7 @@ async function startkagura() {
 
                 if (anu.action == 'add') {
                     kagura.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Добро пожаловать в группу @${num.split("@")[0]} To ${metadata.subject} ` })
-                } else if (anu.action == 'remove') {
+                } else if (anu.action === 'remove') {
                     kagura.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Участник покинул нас! @${num.split("@")[0]} From ${metadata.subject}` })
                 }
             }
